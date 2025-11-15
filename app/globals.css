@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #FFFFF1;
   --foreground: #171717;
 }
 
@@ -11,16 +11,45 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+@theme{
+  --font-lobster: "Lobster Two", sans-serif;
+  --font-courier: "Courier Prime", monospace;
+  --color-yp-1: #FDFFBC;
+  --color-yp-2: #FFEEBB;
+  --color-yp-3: #FFDCB8;
+  --color-yp-4: #FFC1B6;
+  --color-dark-text: #635343;
+}
+
+@layer utilities {
+  .heading {
+    @apply font-lobster text-black;
+  }
+  .signin-container{
+    @apply w-120 h-103 rounded-2xl bg-yp-2 border-2 border-black py-9 flex items-center justify-center;
+  }
+  .signin-content{
+    @apply flex flex-col items-center gap-7;
+  }
+  .signin-form{
+    @apply flex flex-col items-center gap-3;
+  }
+  .signin-input{
+    @apply w-90 h-12 bg-yp-1 rounded-lg border-2 border-black px-7 text-2xl;
+  }
+  .signin-bg{
+    background-image: url('@/public/login-page.png');
+    background-size: cover;
+  }
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #FFFFF1;
     --foreground: #ededed;
   }
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
